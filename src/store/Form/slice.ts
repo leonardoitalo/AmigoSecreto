@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface FormState {
   currentList: string[]
+  error: string
 }
 
 const initialState: FormState = {
   currentList: [],
+  error: '',
 }
 
 const formSlice = createSlice({
@@ -13,7 +15,14 @@ const formSlice = createSlice({
   initialState,
   reducers: {
     addParticipant: (state, action: PayloadAction<string>) => {
-      state.currentList = [...state.currentList, action.payload]
+      if (state.currentList.includes(action.payload)) {
+        // Exibe uma mensagem de erro
+        state.error = 'Nomes duplicaddos não são permitidos!'
+      } else {
+        // Adiciona o participante e limpa o erro anterior
+        state.currentList = [...state.currentList, action.payload]
+        state.error = ''
+      }
     },
   },
 })

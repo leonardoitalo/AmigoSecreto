@@ -53,3 +53,35 @@ test('adicionar um participante caso exista um nome preenchido', () => {
   // garantir que o input não tenha um valor
   expect(input).toHaveValue('')
 })
+
+test('nomes duplicados não podem ser adicionados na lista', () => {
+  render(
+    <Provider store={store}>
+      <Form />
+    </Provider>
+  )
+
+  const input = screen.getByPlaceholderText('Insira os nomes do participantes')
+
+  const botao = screen.getByRole('button')
+
+  fireEvent.change(input, {
+    target: {
+      value: 'Ana Catarina',
+    },
+  })
+  fireEvent.click(botao)
+
+  fireEvent.change(input, {
+    target: {
+      value: 'Ana Catarina',
+    },
+  })
+  fireEvent.click(botao)
+
+  const mensagemDeErro = screen.getByRole('alert')
+
+  expect(mensagemDeErro.textContent).toBe(
+    'Nomes duplicaddos não são permitidos!'
+  )
+})
