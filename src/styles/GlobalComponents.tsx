@@ -32,24 +32,6 @@ export const StartGameContainer = styled.div`
   }
 `
 
-export const NamesList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  li {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-    color: ${colors.grayDark};
-  }
-
-  @media (max-width: 800px) {
-    margin: -14px 0;
-  }
-`
-
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;
