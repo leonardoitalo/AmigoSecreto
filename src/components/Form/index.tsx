@@ -2,6 +2,8 @@ import { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from 'store'
 import { addParticipantWithTimeout, clearError } from 'store/Form/slice'
+import { ButtonForm, FormContainer } from './styles'
+import { Icon, Input } from 'styles/GlobalComponents'
 
 const Form = () => {
   const [nome, setNome] = useState('')
@@ -21,17 +23,18 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={adicionarParticipante}>
-      <input
+    <FormContainer onSubmit={adicionarParticipante}>
+      <Icon src="images/pessoa.png" />
+      <Input
         ref={inputRef}
         value={nome}
         onChange={(event) => setNome(event.target.value)}
         type="text"
         placeholder="Insira os nomes do participantes"
       />
-      <button disabled={!nome}>Adicionar</button>
+      <ButtonForm disabled={!nome}>Adicionar</ButtonForm>
       {errorMessage && <p role="alert">{errorMessage}</p>}
-    </form>
+    </FormContainer>
   )
 }
 

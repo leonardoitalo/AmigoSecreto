@@ -3,6 +3,7 @@ import { colors } from './variablesCss'
 
 const GlobalStyles = createGlobalStyle`
   html {
+
     font-family: 'Poppins', sans-serif;
     border: 2px solid black;
   }
