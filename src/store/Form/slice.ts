@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { AppThunk } from 'store'
 
 interface FormState {
   currentList: string[]
@@ -21,12 +22,24 @@ const formSlice = createSlice({
       } else {
         // Adiciona o participante e limpa o erro anterior
         state.currentList = [...state.currentList, action.payload]
-        state.error = ''
       }
+    },
+    clearError: (state) => {
+      state.error = ''
     },
   },
 })
 
-export const { addParticipant } = formSlice.actions
+// Criando o thunk para lidar com o temporizador
+export const addParticipantWithTimeout =
+  (participant: string): AppThunk =>
+  (dispatch) => {
+    dispatch(addParticipant(participant))
+    setTimeout(() => {
+      dispatch(clearError())
+    }, 5000)
+  }
+
+export const { addParticipant, clearError } = formSlice.actions
 
 export default formSlice.reducer

@@ -1,17 +1,21 @@
 import { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from 'store'
-import { addParticipant } from 'store/Form/slice'
+import { AppDispatch, RootState } from 'store'
+import { addParticipantWithTimeout, clearError } from 'store/Form/slice'
 
 const Form = () => {
   const [nome, setNome] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const errorMessage = useSelector((state: RootState) => state.form.error)
-  const dispatch = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
 
   const adicionarParticipante = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    dispatch(addParticipant(nome))
+    if (errorMessage) {
+      dispatch(clearError()) // Limpar o erro após o tempo definido
+    }
+    dispatch(addParticipantWithTimeout(nome))
+
     setNome('')
     inputRef.current?.focus()
   }
