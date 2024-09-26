@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { store } from 'store'
 import { describe, expect, test, vitest } from 'vitest'
-import AddNamePage from './AddNamePage'
+import AddNamePage from '.'
 
 const mockNavigate = vitest.fn()
 vitest.mock('react-router-dom', () => {
