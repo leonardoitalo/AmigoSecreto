@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
 
-const SortPage = () => {
+const DrawPage = () => {
   const namesList = useSelector((state: RootState) => state.form.currentList)
 
   return (
@@ -17,4 +17,4 @@ const SortPage = () => {
   )
 }
 
-export default SortPage
+export default DrawPage

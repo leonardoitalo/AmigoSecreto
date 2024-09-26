@@ -1,10 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
+import configureMockStore from 'redux-mock-store'
 import { describe, expect, test, vitest } from 'vitest'
 import Footer from '.'
 
-const mockStore = configureStore()
+const mockStore = configureMockStore()
 const mockNavigate = vitest.fn()
 
 vitest.mock('react-router-dom', () => {
@@ -51,6 +51,11 @@ describe('quando existem participantes suficientes', () => {
   })
 
   test('a brincadeira foi iniciada', () => {
+    const store = mockStore({
+      form: {
+        currentList: ['Ana', 'Catarina', 'Pedro'],
+      },
+    })
     render(
       <Provider store={store}>
         <Footer />
@@ -60,7 +65,14 @@ describe('quando existem participantes suficientes', () => {
     const botao = screen.getByRole('button')
     fireEvent.click(botao)
 
+    const actions = store.getActions()
+
     expect(mockNavigate).toHaveBeenCalledTimes(1)
     expect(mockNavigate).toHaveBeenCalledWith('/sorteio')
+
+    expect(actions).toContainEqual({
+      type: 'draw/drawName',
+      payload: ['Ana', 'Catarina', 'Pedro'],
+    })
   })
 })

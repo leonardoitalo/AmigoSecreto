@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { describe, expect, test } from 'vitest'
 import configureStore from 'redux-mock-store'
-import SortPage from '.'
+import DrawPage from '.'
 
 const mockStore = configureStore()
 
@@ -17,7 +17,7 @@ describe('na pagina de sorteio', () => {
 
     render(
       <Provider store={store}>
-        <SortPage />
+        <DrawPage />
       </Provider>
     )
     const opcoes = screen.queryAllByRole('option')

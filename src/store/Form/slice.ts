@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AppThunk } from 'store'
+import { AppThunk, RootState } from 'store'
 
 interface FormState {
   currentList: string[]
@@ -41,5 +41,6 @@ export const addParticipantWithTimeout =
   }
 
 export const { addParticipant, clearError } = formSlice.actions
+export const selectNamesList = (state: RootState) => state.form.currentList
 
 export default formSlice.reducer
