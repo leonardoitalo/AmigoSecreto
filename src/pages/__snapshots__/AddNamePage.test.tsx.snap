@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
+<div>
+  <header
+    class="sc-keTIit hbuRxh"
+  >
+    <div
+      class="sc-dpBQxM gONwmC"
+    />
+    <img
+      alt=""
+      class="sc-jwIPbr hA-dvk"
+      src="images/participante.png"
+    />
+  </header>
+  <div
+    class="sc-gtLWhw kLWIDP"
+  >
+    <h1
+      class="sc-egkSDF ggtMEJ"
+    >
+      Vamos começar!
+    </h1>
+    <form
+      class="sc-khLCKb bNYEiN"
+    >
+      <img
+        class="sc-ivxoEo hoMZFq"
+        src="images/pessoa.png"
+      />
+      <input
+        class="sc-blHHSb sc-fAUdSK eTXDzb iguyGZ"
+        placeholder="Insira os nomes do participantes"
+        type="text"
+        value=""
+      />
+      <button
+        class="sc-blHHSb sc-dstKZu eTXDzb hMKzeZ"
+        disabled=""
+      >
+        Adicionar
+      </button>
+    </form>
+    <ul
+      class="sc-cHqXqK IhmNn"
+    />
+    <footer
+      class="sc-ixGGxD cpLWuJ"
+    >
+      <img
+        class="sc-ghWlax cdTRKE"
+        src="images/play-icone.png"
+      />
+      <button
+        class="sc-blHHSb sc-dntaoT eTXDzb hbKdni"
+        disabled=""
+      >
+        Iniciar brincadeira!
+      </button>
+      <img
+        alt=""
+        src="images/sacola.png"
+      />
+    </footer>
+  </div>
+</div>
+`;
