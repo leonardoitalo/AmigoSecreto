@@ -1,13 +1,8 @@
+import Footer from 'components/Footer'
 import Form from 'components/Form'
 import Header from 'components/Header'
 import NamesList from 'components/NamesList'
-import {
-  Button,
-  Card,
-  IconButton,
-  StartGameContainer,
-  Title,
-} from 'styles/GlobalComponents'
+import { Card, Title } from 'styles/GlobalComponents'
 
 const AddNamePage = () => {
   return (
@@ -17,11 +12,7 @@ const AddNamePage = () => {
         <Title>Vamos começar!</Title>
         <Form />
         <NamesList />
-        <StartGameContainer>
-          <IconButton hideOnMobile src="images/play-icone.png" />
-          <Button>Iniciar brincadeira!</Button>
-          <img src="images/sacola.png" alt="" />
-        </StartGameContainer>
+        <Footer hideonmobile={true} />
       </Card>
     </>
   )

@@ -20,18 +20,6 @@ export const Card = styled.div<CardContainerProps>`
   padding-top: ${({ paddingTop }) => paddingTop || '86px'};
 `
 
-export const StartGameContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 142px;
-  position: relative;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    gap: 24px;
-  }
-`
-
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;
@@ -98,7 +86,7 @@ export const IconButton = styled.img<IconButtonProps>`
   transform: translateY(-50%);
 
   @media (max-width: 800px) {
-    display: ${({ hideOnMobile }) => (hideOnMobile ? 'none' : 'inline-block')};
+    display: ${({ hideonmobile }) => (hideonmobile ? 'none' : 'inline-block')};
   }
 `
 export const Text = styled.p`

@@ -7,9 +7,7 @@ const NamesList = () => {
   return (
     <NamesListContainer>
       {namesList.map((name) => (
-        <li key={name} role="listitem">
-          {name}
-        </li>
+        <li key={name}>{name}</li>
       ))}
     </NamesListContainer>
   )
