@@ -10,7 +10,7 @@ const AddNamePage = () => {
         <Title>Vamos começar!</Title>
         <Form />
         <NamesList />
-        <Footer hideonmobile={true} />
+        <Footer />
       </Card>
     </>
   )

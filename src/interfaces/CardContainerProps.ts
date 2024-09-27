@@ -1,3 +1,3 @@
 export interface CardContainerProps {
-  paddingTop?: string
+  $paddingTop?: string
 }

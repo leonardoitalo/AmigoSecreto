@@ -9,6 +9,10 @@ export const FormDraw = styled.form`
   gap: 34px;
 `
 
+export const SelectContainer = styled.div`
+  position: relative;
+`
+
 export const Select = styled(Input).attrs({ as: 'select' })`
   appearance: none;
 `

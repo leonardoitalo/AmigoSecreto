@@ -1,3 +1,3 @@
 export interface IconButtonProps {
-  hideonmobile?: boolean
+  $hideOMobile?: boolean
 }

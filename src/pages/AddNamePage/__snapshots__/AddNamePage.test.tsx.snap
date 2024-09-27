@@ -2,19 +2,7 @@
 
 exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
 <div>
-  <header
-    class="sc-keTIit hbuRxh"
-  >
-    <div
-      class="sc-dpBQxM gONwmC"
-    />
-    <img
-      alt=""
-      class="sc-jwIPbr hA-dvk"
-      src="images/participante.png"
-    />
-  </header>
-  <div
+  <section
     class="sc-gtLWhw kLWIDP"
   >
     <h1
@@ -26,11 +14,11 @@ exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
       class="sc-khLCKb bNYEiN"
     >
       <img
-        class="sc-ivxoEo hoMZFq"
+        class="sc-ivxoEo QgBzq"
         src="images/pessoa.png"
       />
       <input
-        class="sc-blHHSb sc-fAUdSK eTXDzb iguyGZ"
+        class="sc-blHHSb sc-fAUdSK eTXDzb ekIsde"
         placeholder="Insira os nomes do participantes"
         type="text"
         value=""
@@ -43,7 +31,7 @@ exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
       </button>
     </form>
     <ul
-      class="sc-cHqXqK IhmNn"
+      class="sc-keTIit cYqhjR"
     />
     <footer
       class="sc-ixGGxD cpLWuJ"
@@ -53,7 +41,7 @@ exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
         src="images/play-icone.png"
       />
       <button
-        class="sc-blHHSb sc-dntaoT eTXDzb hbKdni"
+        class="sc-blHHSb sc-dntaoT eTXDzb cPeHyE"
         disabled=""
       >
         Iniciar brincadeira!
@@ -63,6 +51,6 @@ exports[`a pagina de adicionar nome > deve ser renderizada corretamente 1`] = `
         src="images/sacola.png"
       />
     </footer>
-  </div>
+  </section>
 </div>
 `;

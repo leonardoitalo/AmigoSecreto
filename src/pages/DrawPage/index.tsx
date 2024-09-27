@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { Button, Card, Icon, Text, Title } from 'styles/GlobalComponents'
-import { FormDraw, Select, SelectedName } from './styles'
-import { FormContainer } from 'components/Form/styles'
+import { FormDraw, Select, SelectContainer, SelectedName } from './styles'
 
 const DrawPage = () => {
   const namesList = useSelector((state: RootState) => state.form.currentList)
@@ -22,10 +21,10 @@ const DrawPage = () => {
       <FormDraw onSubmit={draw}>
         <Title>Clique em em sortear para ver quem é seu amigo secreto!</Title>
 
-        <FormContainer>
+        <SelectContainer>
           <Icon $top="50%" $left="89%" src="images/triangulo.png" />
           <Select
-            $borderradiusfull="true"
+            $borderRadiusfull="true"
             role="combobox"
             required
             name="currentName"
@@ -40,12 +39,12 @@ const DrawPage = () => {
               <option key={name}>{name}</option>
             ))}
           </Select>
-        </FormContainer>
+        </SelectContainer>
 
         <Text>
           Clique em em sortear para ver quem é seu <br /> amigo secreto!
         </Text>
-        <Button $marginbottom="10px">Sortear</Button>
+        <Button $marginBottom="10px">Sortear</Button>
         {secretFriend && (
           <SelectedName role="alert">{secretFriend}</SelectedName>
         )}

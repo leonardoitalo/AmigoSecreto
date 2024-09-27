@@ -1,7 +1,7 @@
 import { IconButtonProps } from 'interfaces/IconButtonProps'
 import styled from 'styled-components'
 import { colors } from './variablesCss'
-import { CardContainerProps } from 'interfaces/CardContainer'
+import { CardContainerProps } from 'interfaces/CardContainerProps'
 import { InputProps } from 'interfaces/InputProps'
 import { IconProps } from 'interfaces/IconProps'
 import { ButtonProps } from 'interfaces/ButtonProps'
@@ -20,7 +20,7 @@ export const Card = styled.section<CardContainerProps>`
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  padding-top: ${({ paddingTop }) => paddingTop || '86px'};
+  padding-top: ${({ $paddingTop }) => $paddingTop || '86px'};
 `
 
 export const Title = styled.h1`
@@ -34,8 +34,8 @@ export const Input = styled(BaseBorderStyle).attrs<InputProps>({
 })`
   height: 75px;
   width: 500px;
-  border-radius: ${({ $borderradiusfull }) =>
-    $borderradiusfull === 'true' ? '32px' : '0'};
+  border-radius: ${({ $borderRadiusfull }) =>
+    $borderRadiusfull === 'true' ? '32px' : '0'};
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
   padding: 18px 36px 18px 108px;
@@ -62,7 +62,7 @@ export const Button = styled(BaseBorderStyle).attrs<ButtonProps>({
   line-height: 30px;
   letter-spacing: 0.0125em;
   padding-left: 40px;
-  margin-bottom: ${({ $marginbottom }) => $marginbottom || '0'};
+  margin-bottom: ${({ $marginBottom }) => $marginBottom || '0'};
 
   &:hover {
     background-color: ${colors.purple};
@@ -97,7 +97,7 @@ export const IconButton = styled.img<IconButtonProps>`
   transform: translateY(-50%);
 
   @media (max-width: 800px) {
-    display: ${({ hideonmobile }) => (hideonmobile ? 'none' : 'inline-block')};
+    display: ${({ $hideOMobile }) => ($hideOMobile ? 'none' : 'inline-block')};
   }
 `
 export const Text = styled.p`

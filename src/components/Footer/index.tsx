@@ -2,11 +2,10 @@ import { Button, IconButton } from 'styles/GlobalComponents'
 import { FooterContainer } from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
-import { IconButtonProps } from 'interfaces/IconButtonProps'
 import { useNavigate } from 'react-router-dom'
 import { drawName } from 'store/Draw/slice'
 
-const Footer = ({ hideonmobile }: IconButtonProps) => {
+const Footer = () => {
   const namesList = useSelector((state: RootState) => state.form.currentList)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -18,7 +17,7 @@ const Footer = ({ hideonmobile }: IconButtonProps) => {
 
   return (
     <FooterContainer>
-      <IconButton hideonmobile={hideonmobile} src="images/play-icone.png" />
+      <IconButton $hideOMobile src="images/play-icone.png" />
       <Button disabled={namesList.length < 3} onClick={start}>
         Iniciar brincadeira!
       </Button>
