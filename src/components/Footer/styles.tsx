@@ -10,4 +10,21 @@ export const FooterContainer = styled.footer`
     flex-direction: column;
     gap: 24px;
   }
+
+  img.desktop-image {
+    display: block;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  // Mostra a imagem no mobile
+  img.mobile-image {
+    display: none;
+
+    @media (max-width: 800px) {
+      display: block;
+    }
+  }
 `

@@ -4,7 +4,16 @@ const Header = () => {
   return (
     <HeaderContainer>
       <ImageLogo />
-      <ImageParticipant src="images/participante.png" alt="" />
+      <ImageParticipant
+        className="desktop-image"
+        src="images/participante.png"
+        alt=""
+      />
+      <ImageParticipant
+        className="mobile-image"
+        src="images/mobile/participante-mobile.png"
+        alt=""
+      />
     </HeaderContainer>
   )
 }

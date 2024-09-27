@@ -7,10 +7,27 @@ export const HeaderContainer = styled.header`
   background: ${colors.purple};
   padding-top: 120px;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 940px) {
     padding-top: 60px;
     flex-direction: column;
     align-items: center;
+  }
+
+  img.desktop-image {
+    display: block;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  // Mostra a imagem no mobile
+  img.mobile-image {
+    display: none;
+
+    @media (max-width: 800px) {
+      display: block;
+    }
   }
 `
 
@@ -24,6 +41,7 @@ export const ImageLogo = styled.div`
     background-image: url('images/dado-logo-sm.png');
     width: 235px;
     height: 199px;
+    margin-left: 50px;
   }
 `
 

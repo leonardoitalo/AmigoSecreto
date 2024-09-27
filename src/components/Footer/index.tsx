@@ -21,7 +21,12 @@ const Footer = () => {
       <Button disabled={namesList.length < 3} onClick={start}>
         Iniciar brincadeira!
       </Button>
-      <img src="images/sacola.png" alt="" />
+      <img className="desktop-image" src="images/sacola.png" alt="" />
+      <img
+        className="mobile-image"
+        src="images/mobile/sacola-mobile.png"
+        alt=""
+      />
     </FooterContainer>
   )
 }

@@ -27,6 +27,10 @@ export const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;
   color: ${colors.purple};
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 `
 
 export const Input = styled(BaseBorderStyle).attrs<InputProps>({
