@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { doDraw } from 'helpers/doDraw'
 
 interface DrawState {
-  selectedName: string
+  selectedName: Record<string, string>
 }
 
 const initialState: DrawState = {
-  selectedName: '',
+  selectedName: {},
 }
 
 const draw = createSlice({
@@ -16,8 +16,7 @@ const draw = createSlice({
     drawName: (state, action: PayloadAction<string[]>) => {
       const names = action.payload
       const result = doDraw(names)
-      console.log(result)
-      state.selectedName = Array.from(result.keys())[0]
+      state.selectedName = Object.fromEntries(result.entries())
     },
   },
 })
