@@ -2,13 +2,16 @@ import { IconButtonProps } from 'interfaces/IconButtonProps'
 import styled from 'styled-components'
 import { colors } from './variablesCss'
 import { CardContainerProps } from 'interfaces/CardContainer'
+import { InputProps } from 'interfaces/InputProps'
+import { IconProps } from 'interfaces/IconProps'
+import { ButtonProps } from 'interfaces/ButtonProps'
 
 export const BaseBorderStyle = styled.div`
   border: 2px solid #000000;
   box-shadow: 4px 4px 0px 1px rgba(0, 0, 0, 1);
 `
 
-export const Card = styled.div<CardContainerProps>`
+export const Card = styled.section<CardContainerProps>`
   background-color: ${colors.cream};
   border-radius: 64px 64px 0 0;
   height: 100vh;
@@ -26,9 +29,13 @@ export const Title = styled.h1`
   color: ${colors.purple};
 `
 
-export const Input = styled(BaseBorderStyle).attrs({ as: 'input' })`
+export const Input = styled(BaseBorderStyle).attrs<InputProps>({
+  as: 'input',
+})`
   height: 75px;
   width: 500px;
+  border-radius: ${({ $borderradiusfull }) =>
+    $borderradiusfull === 'true' ? '32px' : '0'};
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
   padding: 18px 36px 18px 108px;
@@ -42,7 +49,9 @@ export const Input = styled(BaseBorderStyle).attrs({ as: 'input' })`
   }
 `
 
-export const Button = styled(BaseBorderStyle).attrs({ as: 'button' })`
+export const Button = styled(BaseBorderStyle).attrs<ButtonProps>({
+  as: 'button',
+})`
   width: 351px;
   height: 80px;
   border-radius: 38px;
@@ -53,6 +62,7 @@ export const Button = styled(BaseBorderStyle).attrs({ as: 'button' })`
   line-height: 30px;
   letter-spacing: 0.0125em;
   padding-left: 40px;
+  margin-bottom: ${({ $marginbottom }) => $marginbottom || '0'};
 
   &:hover {
     background-color: ${colors.purple};
@@ -67,12 +77,13 @@ export const Button = styled(BaseBorderStyle).attrs({ as: 'button' })`
   }
 `
 
-export const Icon = styled.img`
+export const Icon = styled.img<IconProps>`
   position: absolute;
-  top: 50%;
-  left: 7%;
+  top: ${({ $top }) => $top || '50%'};
+  left: ${({ $left }) => $left || '7%'};
   transform: translateY(-50%);
   pointer-events: none; /* Permite clicar no input em vez do ícone */
+  cursor: pointer;
 
   @media (max-width: 800px) {
     top: 19%;
@@ -93,4 +104,6 @@ export const Text = styled.p`
   font-size: 20px;
   font-weight: 400;
   text-align: center;
+  line-height: 30px;
+  color: ${colors.grayDark};
 `
