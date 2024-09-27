@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { Button, Card, Icon, Text, Title } from 'styles/GlobalComponents'
 import { FormDraw, Select, SelectContainer, SelectedName } from './styles'
+import { useEffect, useState } from 'react'
 
 const DrawPage = () => {
   const namesList = useSelector((state: RootState) => state.form.currentList)
@@ -10,10 +10,17 @@ const DrawPage = () => {
   const [currentName, setCurrentName] = useState('')
   const [secretFriend, setSecretFriend] = useState('')
 
+  useEffect(() => {
+    if (namesList.length > 0) {
+      const firstName = namesList[0]
+      setCurrentName(firstName)
+    }
+  }, [namesList, drawnName])
+
   const draw = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const result = drawnName[currentName]
-    setSecretFriend(result) // Atualiza o estado do amigo secret
+    setSecretFriend(result)
   }
 
   return (

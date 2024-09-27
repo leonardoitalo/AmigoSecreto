@@ -3,10 +3,12 @@ import { doDraw } from 'helpers/doDraw'
 
 interface DrawState {
   selectedName: Record<string, string>
+  firstName: string
 }
 
 const initialState: DrawState = {
   selectedName: {},
+  firstName: '',
 }
 
 const draw = createSlice({
