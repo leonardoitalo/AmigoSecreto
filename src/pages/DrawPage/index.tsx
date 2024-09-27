@@ -1,6 +1,13 @@
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
-import { Button, Card, Icon, Text, Title } from 'styles/GlobalComponents'
+import {
+  Button,
+  Card,
+  Icon,
+  IconButton,
+  Text,
+  Title,
+} from 'styles/GlobalComponents'
 import { FormDraw, Select, SelectContainer, SelectedName } from './styles'
 import { useEffect, useState } from 'react'
 
@@ -24,12 +31,18 @@ const DrawPage = () => {
   }
 
   return (
-    <Card>
+    <Card $paddingTop="52px">
       <FormDraw onSubmit={draw}>
-        <Title>Clique em em sortear para ver quem é seu amigo secreto!</Title>
+        <Title>Quem vai tirar o papelzinho?</Title>
 
         <SelectContainer>
-          <Icon $top="50%" $left="89%" src="images/triangulo.png" />
+          <Icon
+            $top="50%"
+            $topMobile="50%"
+            $left="89%"
+            $leftMobile="87%"
+            src="images/triangulo.png"
+          />
           <Select
             $borderRadiusfull="true"
             role="combobox"
@@ -51,11 +64,26 @@ const DrawPage = () => {
         <Text>
           Clique em em sortear para ver quem é seu <br /> amigo secreto!
         </Text>
-        <Button $marginBottom="10px">Sortear</Button>
+
+        <IconButton
+          $top="59.5%"
+          $topMobile="59%"
+          $left="35%"
+          $height="32px"
+          src="images/dado-botao.png"
+        />
+        <Button $width="227px" $paddingMobile="-1px" $marginBottom="10px">
+          Sortear
+        </Button>
         {secretFriend && (
           <SelectedName role="alert">{secretFriend}</SelectedName>
         )}
-        <img src="images/aviao.png" alt="" />
+        <img className="desktop-image" src="images/aviao.png" alt="" />
+        <img
+          className="mobile-image"
+          src="images/mobile/aviao-mobile.png"
+          alt=""
+        />
       </FormDraw>
     </Card>
   )

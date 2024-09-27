@@ -56,7 +56,8 @@ export const Input = styled(BaseBorderStyle).attrs<InputProps>({
 export const Button = styled(BaseBorderStyle).attrs<ButtonProps>({
   as: 'button',
 })`
-  width: 351px;
+  /* width: 351px; */
+  width: ${({ $width }) => $width};
   height: 80px;
   border-radius: 38px;
   background-color: ${colors.orange};
@@ -66,7 +67,7 @@ export const Button = styled(BaseBorderStyle).attrs<ButtonProps>({
   line-height: 30px;
   letter-spacing: 0.0125em;
   padding-left: 40px;
-  margin-bottom: ${({ $marginBottom }) => $marginBottom || '0'};
+  margin-bottom: ${({ $marginBottom }) => $marginBottom || '0px 24px'};
 
   &:hover {
     background-color: ${colors.purple};
@@ -75,7 +76,7 @@ export const Button = styled(BaseBorderStyle).attrs<ButtonProps>({
   @media (max-width: 800px) {
     width: 155px;
     height: 64px;
-    padding: 0px 24px;
+    padding: ${({ $paddingMobile }) => $paddingMobile || '0px'};
     font-size: 16px;
     line-height: 24px;
   }
@@ -90,18 +91,23 @@ export const Icon = styled.img<IconProps>`
   cursor: pointer;
 
   @media (max-width: 800px) {
-    top: 19%;
+    top: ${({ $topMobile }) => $topMobile || '19%'};
+    left: ${({ $leftMobile }) => $leftMobile || '0%'};
   }
 `
 
 export const IconButton = styled.img<IconButtonProps>`
   position: absolute;
-  top: 50%;
-  left: 6%;
+  top: ${({ $top }) => $top || '50px'};
+  left: ${({ $left }) => $left || '6%'};
+  height: ${({ $height }) => $height};
   transform: translateY(-50%);
 
   @media (max-width: 800px) {
     display: ${({ $hideOMobile }) => ($hideOMobile ? 'none' : 'inline-block')};
+    top: 56%;
+    left: 36%;
+    height: 24px;
   }
 `
 export const Text = styled.p`
@@ -110,4 +116,8 @@ export const Text = styled.p`
   text-align: center;
   line-height: 30px;
   color: ${colors.grayDark};
+
+  @media (max-width: 800px) {
+    font-size: 18px;
+  }
 `

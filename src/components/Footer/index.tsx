@@ -17,8 +17,13 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <IconButton $hideOMobile src="images/play-icone.png" />
-      <Button disabled={namesList.length < 3} onClick={start}>
+      <IconButton $top="50%" $hideOMobile src="images/play-icone.png" />
+      <Button
+        $paddingMobile="0px 24px"
+        $width="351px"
+        disabled={namesList.length < 3}
+        onClick={start}
+      >
         Iniciar brincadeira!
       </Button>
       <img className="desktop-image" src="images/sacola.png" alt="" />

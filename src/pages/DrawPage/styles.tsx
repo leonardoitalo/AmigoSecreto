@@ -7,6 +7,24 @@ export const FormDraw = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 34px;
+  position: relative;
+
+  img.desktop-image {
+    display: block;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  // Mostra a imagem no mobile
+  img.mobile-image {
+    display: none;
+
+    @media (max-width: 800px) {
+      display: block;
+    }
+  }
 `
 
 export const SelectContainer = styled.div`

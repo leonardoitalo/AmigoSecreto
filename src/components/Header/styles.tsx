@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   padding-top: 120px;
 
   @media screen and (max-width: 940px) {
-    padding-top: 60px;
+    padding-top: 32px;
     flex-direction: column;
     align-items: center;
   }
@@ -47,5 +47,8 @@ export const ImageLogo = styled.div`
 
 export const ImageParticipant = styled.img`
   z-index: 1;
-  height: 277px;
+
+  @media (max-width: 800px) {
+    margin-bottom: 12px;
+  }
 `

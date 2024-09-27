@@ -24,7 +24,7 @@ const Form = () => {
 
   return (
     <FormContainer onSubmit={adicionarParticipante}>
-      <Icon src="images/pessoa.png" />
+      <Icon $topMobile="23%" $leftMobile="7%" src="images/pessoa.png" />
       <Input
         ref={inputRef}
         value={nome}
